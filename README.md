@@ -1,3 +1,5 @@
+# MAKE SURE TO RUN NPM INSTALL, NPM INSTALL BOOTSTRAP, AND NPM INSTALL ANGULAR-CALENDAR
+
 # 313Project
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
