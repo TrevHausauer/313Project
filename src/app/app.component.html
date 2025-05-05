@@ -1,4 +1,8 @@
-<ngx-calendar-widget
+<div class="header">
+  <h1>To Do List Application</h1>
+</div>
+<div class = "wrapper">
+  <ngx-calendar-widget
     [locale]="'en'"
     [size]="'default'"
     [events]="events"
@@ -6,3 +10,4 @@
     (addEvent)="onAddEvent($event)"
     (selectEvent)="onEventSelect($event)">
 </ngx-calendar-widget>
+</div>
