@@ -8,4 +8,13 @@
   <div>
     <p>NOTES, TASKS, STEPS, CALENDER, ACCOUNT/ADMIN PAGE, LOGIN/SIGNUP</p>
   </div>
+    <ngx-calendar-widget
+      [locale]="'en'"
+      [size]="'default'"
+      [events]="events"
+      [enableAddEvent]="true"
+      (addEvent)="onAddEvent($event)"
+      (selectEvent)="onEventSelect($event)">
+  </ngx-calendar-widget>
+ 
 <router-outlet></router-outlet>

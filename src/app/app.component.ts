@@ -28,9 +28,14 @@ export class AppComponent {
 ];
 
 onAddEvent(date: string) {
-    console.log('Add event on:', date);
-    // Implement your event creation logic here
-}
+    const newEvent: CalendarEventInterface = {
+      id: Date.now(),
+      title: 'New Event',
+      date: date,
+      endDate: date, // or calculate end time
+    };
+    this.events = [...this.events, newEvent];
+  }
 
 onEventSelect(event: CalendarEventInterface) {
     console.log('Event clicked:', event);
