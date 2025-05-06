@@ -37,8 +37,8 @@ onAddEvent(date: string) {
     this.events = [...this.events, newEvent];
   }
 
-onEventSelect(event: CalendarEventInterface) {
+  onEventSelect(event: CalendarEventInterface) {
     console.log('Event clicked:', event);
     // Implement your event handling logic here
-}
+  }
 }
