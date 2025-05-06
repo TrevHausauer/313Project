@@ -8,37 +8,39 @@ import { NotesComponent } from './notes/notes.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { NoteComponent } from './note/note.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        redirectTo:'login',
-        pathMatch: 'full'
-    },
-    {
-        path: 'login',
-        component: LoginComponent,
-        title: 'Login'
-    },
-    {
-        path: 'dashboard',
-        component: DashboardComponent,
-        title: 'Dashboard'
-    },
-        {
-        path: 'register',
-        component: RegisterComponent,
-        title: 'Register'
-    },
-    {
-        path: 'verify-email',
-        component: VerifyEmailComponent
-    },
-    {
-        path: 'forgot-password',
-        component: ForgotPasswordComponent
-    },
-  
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Login',
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    title: 'Dashboard',
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'Register',
+  },
+  {
+    path: 'verify-email',
+    component: VerifyEmailComponent,
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
+  },
+
   {
     path: 'notes',
     component: NotesComponent,
@@ -58,5 +60,15 @@ export const routes: Routes = [
     path: 'note-edit/:id',
     component: EditNoteComponent,
     title: 'Edit Note Component',
+  },
+  {
+    path: 'add-event',
+    component: AddEventComponent,
+    title: 'Add Event Component',
+  },
+  {
+    path: 'calendar-page',
+    component: CalendarPageComponent,
+    title: 'Calendar Component',
   },
 ];
