@@ -28,6 +28,7 @@ export class CalendarViewComponent {
 ];
 
 onAddEvent(date: string) {
+  
   const newEvent: CalendarEventInterface = {
     id: Date.now(),
     title: 'New Event',
