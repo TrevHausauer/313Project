@@ -1,13 +1,12 @@
-<div class="header">
-  <h1>To Do List Application</h1>
-</div>
-<div class = "wrapper">
-  <ngx-calendar-widget
-    [locale]="'en'"
-    [size]="'default'"
-    [events]="events"
-    [enableAddEvent]="true"
-    (addEvent)="onAddEvent($event)"
-    (selectEvent)="onEventSelect($event)">
-</ngx-calendar-widget>
+  <div>
+    <header>Home Buttons?</header>
+  </div>
+  <div class="btn-section">
+    <button class="btn btn-primary" routerLink="">Home</button>
+    <button class="btn btn-success" routerLink="notes">Notes</button>
+  </div>
+  <div>
+    <p>NOTES, TASKS, STEPS, CALENDER, ACCOUNT/ADMIN PAGE, LOGIN/SIGNUP</p>
+  </div>
+  <router-outlet></router-outlet>
 </div>

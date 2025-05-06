@@ -1,0 +1,52 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--bs-light);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+}
+
+.main-section {
+  background: var(--bs-white);
+  box-shadow: var(--bs-box-shadow-lg);
+  border: 1px solid var(--bs-border-color);
+}
+
+.note-box {
+  background-color: var(--bs-white);
+  border: 1px solid var(--bs-border-color);
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--bs-secondary-bg-subtle);
+}
+
+.btn-danger,
+.btn-warning {
+  border: none;
+}
+
+.btn-danger {
+  background-color: var(--bs-danger);
+}
+
+.btn-danger:hover {
+  background-color: var(--bs-danger-hover, #c82333);
+}
+
+.btn-warning {
+  background-color: var(--bs-warning);
+}
+
+.btn-warning:hover {
+  background-color: var(--bs-warning-hover, #e0a800);
+}
+
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  width: 100%;
+}

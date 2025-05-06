@@ -1,0 +1,32 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary shadow position-relative"
+>
+  <div class="container-fluid d-flex align-items-center">
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-light" routerLink="/notes">Notes</button>
+      <button class="btn btn-success" routerLink="/add-note">+ Add Note</button>
+    </div>
+    <span class="navbar-brand position-absolute start-50 translate-middle-x"
+      >User's Notes</span
+    >
+    <button class="btn btn-outline-light" routerLink="">To Do List</button>
+  </div>
+</nav>
+
+<main class="main-section container my-5 p-4 rounded shadow-lg">
+  <table class="table table-hover align-middle">
+    <!-- ADD FOR LOOP FOR LOADING DATA -->
+    <tbody>
+      @for(note of notes; track note.id){
+      <tr>
+        <td class="fw-bold text-primary">
+          <a [routerLink]="['/note', note.id]">{{ note.title }}</a>
+        </td>
+        <td class="note-content">
+          {{ note.content }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</main>

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgxCalendarWidgetModule } from '@localia/ngx-calendar-widget';
 import { CalendarEventInterface } from './calendar-event-interface';
 import { CalendarModule } from './calendar/calendar.module';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgxCalendarWidgetModule, CalendarModule],
+  imports: [RouterOutlet, RouterLink, NgxCalendarWidgetModule, CalendarModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = '313Project';
