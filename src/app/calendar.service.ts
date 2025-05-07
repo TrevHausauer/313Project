@@ -26,7 +26,7 @@ export class CalendarService {
     >;
   }
 
-  addNote(newEvent: CalendarEventInterface) {
+  addEvent(newEvent: CalendarEventInterface) {
     const eventRef = doc(this.eventCollection);
     const newId = eventRef.id;
     newEvent.id = newId;
