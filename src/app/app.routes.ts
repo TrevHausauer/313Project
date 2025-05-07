@@ -62,7 +62,7 @@ export const routes: Routes = [
     title: 'Edit Note Component',
   },
   {
-    path: 'add-event',
+    path: 'add-event/:date',
     component: AddEventComponent,
     title: 'Add Event Component',
   },

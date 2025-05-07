@@ -29,7 +29,8 @@ export class CalendarPageComponent {
   ];
 
   onAddEvent(date: string) {
-    this.router.navigate(['/add-event']);
+    const dateString = date.toString().split('T')[0];
+    this.router.navigate(['/add-event', dateString]);
   }
   onEventSelect(event: CalendarEventInterface) {
     console.log('Event clicked:', event);
