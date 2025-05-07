@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NoteService } from '../note.service';
 import { Note } from '../../models/note';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-add-note',
@@ -12,6 +13,7 @@ import { RouterLink } from '@angular/router';
 })
 export class AddNoteComponent implements OnInit {
   noteService = inject(NoteService);
+  authService = inject(AuthService);
 
   note: Note = { id: '', userId: '', title: '', content: '' };
 
@@ -22,6 +24,7 @@ export class AddNoteComponent implements OnInit {
   }
 
   addNote() {
+    this.note.userId = this.authService.getUser()?.uid;
     this.noteService.addNote(this.note);
     this.resetForm();
   }

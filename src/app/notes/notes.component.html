@@ -7,7 +7,7 @@
       <button class="btn btn-success" routerLink="/add-note">+ Add Note</button>
     </div>
     <span class="navbar-brand position-absolute start-50 translate-middle-x"
-      >User's Notes</span
+      >{{ authService.getUser()?.displayName }}'s Notes</span
     >
     <button class="btn btn-outline-light" routerLink="">To Do List</button>
   </div>
@@ -17,7 +17,8 @@
   <table class="table table-hover align-middle">
     <!-- ADD FOR LOOP FOR LOADING DATA -->
     <tbody>
-      @for(note of notes; track note.id){
+      @for(note of notes; track note.id){ @if(note.userId ==
+      authService.getUser()?.uid){
       <tr>
         <td class="fw-bold text-primary">
           <a [routerLink]="['/note', note.id]">{{ note.title }}</a>
@@ -26,7 +27,7 @@
           {{ note.content }}
         </td>
       </tr>
-      }
+      }}
     </tbody>
   </table>
 </main>
