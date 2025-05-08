@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CalendarEventInterface } from '../calendar-event-interface';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgxCalendarWidgetModule } from '@localia/ngx-calendar-widget';
 import { CalendarModule } from '../calendar/calendar.module';
+import { CalendarService } from '../calendar.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-calendar-page',
@@ -10,23 +12,13 @@ import { CalendarModule } from '../calendar/calendar.module';
   templateUrl: './calendar-page.component.html',
   styleUrl: './calendar-page.component.css',
 })
-export class CalendarPageComponent {
+export class CalendarPageComponent implements OnInit {
+  calendarService = inject(CalendarService);
+  authService = inject(AuthService);
+
   constructor(private router: Router) {}
 
-  events: CalendarEventInterface[] = [
-    {
-      id: 1,
-      title: 'Team Meeting',
-      date: '2025-05-01T10:00:00',
-      endDate: '2025-05-01T12:00:00',
-    },
-    {
-      id: 2,
-      title: 'Conference',
-      date: '2025-05-05T09:00:00',
-      endDate: '2025-05-07T17:00:00',
-    },
-  ];
+  events: CalendarEventInterface[] = [];
 
   onAddEvent(date: string) {
     const dateString = date.toString().split('T')[0];
@@ -35,5 +27,13 @@ export class CalendarPageComponent {
   onEventSelect(event: CalendarEventInterface) {
     console.log('Event clicked:', event);
     // Implement your event handling logic here
+  }
+
+  ngOnInit(): void {
+    this.calendarService.getEvents().subscribe((data) => {
+      this.events = data.filter(
+        (event) => event.userID === this.authService.getUser()?.uid
+      );
+    });
   }
 }
