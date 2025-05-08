@@ -1,0 +1,44 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary shadow position-relative"
+>
+  <div class="container-fluid d-flex align-items-center">
+    <div class="d-flex gap-2">
+      <a href="" class="btn btn-outline-light" routerLink="/events">Events</a>
+    </div>
+    <span class="navbar-brand position-absolute start-50 translate-middle-x"
+      >User's Events</span
+    >
+    <button class="btn btn-outline-light" routerLink="">To Do List</button>
+  </div>
+</nav>
+
+<main class="main-section container my-5 p-4 rounded shadow-lg text-center">
+  @for(event of events; track event.id){ @if(event.id == id){
+  <h2 class="mb-4">Edit {{ event.title }}</h2>
+  <div class="note-box p-4 bg-white border rounded shadow-sm text-start">
+    <div class="mb-3">
+      <label for="noteContent" class="form-label fw-bold">Event Content</label>
+      <textarea
+        type="text"
+        class="form-control form-control-lg"
+        [(ngModel)]="event.description"
+      ></textarea>
+    </div>
+    <div class="d-flex justify-content-center gap-2">
+      <a
+        href=""
+        class="btn btn-outline-secondary"
+        [routerLink]="['/event', event.id]"
+        >Cancel</a
+      >
+      <button
+        class="btn btn-success"
+        [routerLink]="['/event', event.id]"
+        (click)="updateEvent(event)"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+  }}
+</main>
