@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NoteService } from '../note.service';
 import { Note } from '../../models/note';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-notes',
   imports: [RouterLink],
@@ -10,6 +11,7 @@ import { Note } from '../../models/note';
 })
 export class NotesComponent implements OnInit {
   noteService = inject(NoteService);
+  authService = inject(AuthService);
 
   note: Note = { id: '', userId: '', title: '', content: '' };
 
