@@ -32,7 +32,7 @@ export class AuthService {
     signInWithEmailAndPassword(this.auth, email, password).then(
       () => {
         localStorage.setItem('token', 'true');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/calendar-page']);
       },
       (err) => {
         alert(`Something went wrong: ${err.message} `);
@@ -48,7 +48,7 @@ export class AuthService {
         const displayName = aUser.fname + ' ' + aUser.lname;
         updateProfile(user, { displayName });
         alert('Registration Successful');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/calendar-page']);
       })
       .catch((err) => {
         alert(err.message);

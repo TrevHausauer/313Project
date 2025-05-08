@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,12 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = '313Project';
+
+  authService = inject(AuthService);
+
+  constructor(public router: Router) {}
+
+  logout() {
+    this.authService.logout();
+  }
 }

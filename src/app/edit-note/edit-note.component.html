@@ -1,17 +1,3 @@
-<nav
-  class="navbar navbar-expand-lg navbar-dark bg-primary shadow position-relative"
->
-  <div class="container-fluid d-flex align-items-center">
-    <div class="d-flex gap-2">
-      <a href="" class="btn btn-outline-light" routerLink="/notes">Notes</a>
-    </div>
-    <span class="navbar-brand position-absolute start-50 translate-middle-x"
-      >User's Notes</span
-    >
-    <button class="btn btn-outline-light" routerLink="">To Do List</button>
-  </div>
-</nav>
-
 <main class="main-section container my-5 p-4 rounded shadow-lg text-center">
   @for(note of notes; track note.id){ @if(note.id == id){
   <h2 class="mb-4">Edit {{ note.title }}</h2>

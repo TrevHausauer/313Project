@@ -8,7 +8,37 @@
   <button class="btn btn-success" routerLink="add-event">Add Event</button>
 </div>
 <div>
-  <p>NOTES, TASKS, STEPS, CALENDAR, ACCOUNT/ADMIN PAGE, LOGIN/SIGNUP</p>
+  <p>TASKS, STEPS, ADMIN PAGE</p>
 </div>
+@if(authService.getUser() != undefined) {
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-primary shadow position-relative"
+>
+  <div
+    class="container-fluid d-flex align-items-center justify-content-between"
+  >
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-light" routerLink="/calendar-page">
+        To Do List
+      </button>
+      <a routerLink="/notes" class="btn btn-outline-light">Notes</a>
 
+      @if (router.url === '/notes') {
+      <button class="btn btn-success" routerLink="/add-note">+ Add Note</button>
+      }
+    </div>
+
+    <span
+      class="navbar-brand position-absolute top-50 start-50 translate-middle"
+    >
+      {{ authService.getUser()?.displayName }}'s To-Do List
+    </span>
+
+    <div class="d-flex gap-2">
+      <a routerLink="/dashboard" class="btn btn-outline-light">Profile</a>
+      <button class="btn btn-success" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+}
 <router-outlet></router-outlet>

@@ -5,15 +5,8 @@ import { AuthService } from '../auth.service';
   selector: 'app-dashboard',
   imports: [],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-
-  private authService = inject(AuthService);
-
-  logout() {
-    this.authService.logout();
-  }
-
-  user = this.authService.getUser();
+  authService = inject(AuthService);
 }
