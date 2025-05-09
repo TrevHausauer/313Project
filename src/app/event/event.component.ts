@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CalendarEventInterface } from '../calendar-event-interface';
 import { CalendarService } from '../calendar.service';
+import { StepComponent } from '../step/step.component';
 
 @Component({
   selector: 'app-event',
-  imports: [RouterLink],
+  imports: [RouterLink, StepComponent],
   templateUrl: './event.component.html',
   styleUrl: './event.component.css',
 })

@@ -1,0 +1,47 @@
+<h3 class="text-center text-secondary">Steps</h3>
+
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="New step..."
+    [(ngModel)]="newStepContent"
+  />
+  <button class="btn btn-success mt-2 w-100" (click)="addStep()">
+    Add Step
+  </button>
+</div>
+
+<table class="table table-hover align-middle">
+  <tbody>
+    @for(step of steps; track step.id) {
+    <tr>
+      <td class="fw-bold text-primary">{{ $index + 1 }}.</td>
+      <td>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="step.content"
+          placeholder="Step content"
+        />
+      </td>
+      <td>
+        <button
+          class="btn btn-sm btn-warning me-1"
+          (click)="updateStep(step)"
+          title="Update Step"
+        >
+          Update
+        </button>
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="deleteStep(step)"
+          title="Delete Step"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
