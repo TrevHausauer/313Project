@@ -38,4 +38,10 @@ export class EventComponent implements OnInit {
   deleteEvent(event: CalendarEventInterface) {
     this.calendarService.deleteEvent(event);
   }
+
+  markComplete(event: CalendarEventInterface, e: Event) {
+    const checked = (e.target as HTMLInputElement).checked;
+    event.completed = checked;
+    this.calendarService.updateEvent(event);
+  }
 }

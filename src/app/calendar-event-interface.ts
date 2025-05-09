@@ -6,4 +6,5 @@ export interface CalendarEventInterface {
   priority: string;
   description: string;
   userID: string | undefined;
+  completed?: boolean;
 }
