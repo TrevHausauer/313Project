@@ -10,6 +10,8 @@ import { NoteComponent } from './note/note.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { CalendarPageComponent } from './calendar-page/calendar-page.component';
+import { EventComponent } from './event/event.component';
+import { EditEventComponent } from './edit-event/edit-event.component';
 
 export const routes: Routes = [
   {
@@ -65,6 +67,16 @@ export const routes: Routes = [
     path: 'add-event/:date',
     component: AddEventComponent,
     title: 'Add Event Component',
+  },
+  {
+    path: 'event/:id',
+    component: EventComponent,
+    title: 'Event Component',
+  },
+  {
+    path: 'edit-event/:id',
+    component: EditEventComponent,
+    title: 'Edit Event Component',
   },
   {
     path: 'calendar-page',

@@ -25,8 +25,7 @@ export class CalendarPageComponent implements OnInit {
     this.router.navigate(['/add-event', dateString]);
   }
   onEventSelect(event: CalendarEventInterface) {
-    console.log('Event clicked:', event);
-    // Implement your event handling logic here
+    this.router.navigate(['/event', event.id]);
   }
 
   ngOnInit(): void {

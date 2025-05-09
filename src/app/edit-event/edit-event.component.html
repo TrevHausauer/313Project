@@ -1,8 +1,8 @@
 <main class="container my-5 p-4 bg-white rounded shadow">
-  <h1 class="text-center text-primary mb-4">User's To Do List</h1>
-
+  <h1 class="text-center text-primary mb-4">Task Details</h1>
+  @for(event of events; track event.id) { @if(event.id == eventID) {
   <section>
-    <h2 class="text-center text-secondary mb-4">Add Task</h2>
+    <h2 class="text-center text-secondary mb-4">Edit Task</h2>
     <form>
       <div class="row mb-3">
         <div class="col">
@@ -47,7 +47,11 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Priority</label>
-        <select class="form-select" name="priority" [(ngModel)]="priority">
+        <select
+          class="form-select"
+          name="priority"
+          [(ngModel)]="event.priority"
+        >
           <option selected>High</option>
           <option>Medium</option>
           <option>Low</option>
@@ -60,7 +64,7 @@
           type="text"
           class="form-control"
           name="title"
-          [(ngModel)]="title"
+          [(ngModel)]="event.title"
         />
       </div>
 
@@ -70,26 +74,25 @@
           name="Description"
           class="form-control"
           rows="4"
-          [(ngModel)]="description"
+          [(ngModel)]="event.description"
         ></textarea>
       </div>
-      <div class="d-flex justify-content-center gap-3">
+      <div class="d-flex justify-content-center gap-2">
         <button
-          type="submit"
-          class="btn btn-primary"
-          (click)="addEvent()"
-          routerLink="/calendar-page"
-        >
-          Add Task
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          routerLink="/calendar-page"
+          class="btn btn-outline-secondary"
+          [routerLink]="['/event', event.id]"
         >
           Cancel
+        </button>
+        <button
+          class="btn btn-success"
+          [routerLink]="['/event', event.id]"
+          (click)="updateEvent(event)"
+        >
+          Save
         </button>
       </div>
     </form>
   </section>
+  }}
 </main>
